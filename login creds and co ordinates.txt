@@ -1,0 +1,7 @@
+Predefined Login credentials 
+Username: shashankwrm@gmail.com
+Password: Shan@7$
+Sample co ordinates
+House near MITS College: (13.5635, 78.5076)
+MITS College, Madanapalle: (13.5588, 78.5021)
+Beauty Parlor in Madanapalle: (13.5562, 78.5094)
