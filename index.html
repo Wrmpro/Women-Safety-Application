@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women Safety Protection</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+    <!-- Login Page -->
+    <div class="login-container" id="loginPage">
+        <h1>Women Safety Protection</h1>
+        <form id="loginForm">
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit" class="login-button">Login</button>
+            <button type="button" class="create-account-button" onclick="showCreateAccount()">Create Account</button>
+        </form>
+    </div>
+
+    <!-- Create Account Page -->
+    <div class="create-account-container" id="createAccountPage" style="display: none;">
+        <h1>Create Account</h1>
+        <form id="createAccountForm">
+            <div class="input-group">
+                <label for="new-username">Username</label>
+                <input type="text" id="new-username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="new-password">Password</label>
+                <input type="password" id="new-password" name="password" required>
+            </div>
+            <button type="submit" class="create-account-button">Create Account</button>
+            <button type="button" class="back-button" onclick="showLogin()">Back to Login</button>
+        </form>
+    </div>
+
+    <!-- Home Page -->
+    <div class="home-container" id="homePage" style="display: none;">
+        <nav class="navbar">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#personal-details">Personal Details</a></li>
+                <li><a href="#logout">Logout</a></li>
+            </ul>
+        </nav>
+
+        <div id="home" class="content">
+            <h2>Welcome to Women Safety Protection</h2>
+            <div class="daily-plans">
+                <p>Do you have any plans today?</p>
+                <button onclick="askPlans()">Yes</button>
+                <button onclick="noPlans()">No</button>
+                <div id="plans-response"></div>
+            </div>
+
+            <div id="services" class="services-container">
+                <h3>Services</h3>
+                <div id="location-triangle" class="service-item">
+                    <h4>Location Triangle</h4>
+                    <p>Define your safe triangle:</p>
+                    <form id="triangleForm">
+                        <label for="point1">Point 1 (Home/Hostel):</label>
+                        <input type="text" id="point1" name="point1" placeholder="Latitude,Longitude" required><br>
+                        <label for="point2">Point 2 (College/Workplace):</label>
+                        <input type="text" id="point2" name="point2" placeholder="Latitude,Longitude" required><br>
+                        <label for="point3">Point 3 (Shopping Mall/Beauty Parlour):</label>
+                        <input type="text" id="point3" name="point3" placeholder="Latitude,Longitude" required><br>
+                        <button type="button" onclick="createTriangle()">Create Triangle</button>
+                    </form>
+                    <div id="map" style="width: 100%; height: 500px; margin-top: 20px;"></div>
+                    <button type="button" onclick="rotateMap()">Rotate Map</button>
+                </div>
+
+                <div class="service-item">
+                    <h4>Voice Recognition</h4>
+                    <p>Service details about voice recognition.</p>
+                </div>
+
+                <div class="service-item">
+                    <h4>Face Recognition</h4>
+                    <p>Service details about face recognition.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="personal-details" class="content">
+            <h3>Personal Details</h3>
+            <form id="personalDetailsForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required>
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" required>
+                <label for="contact">Contact Number:</label>
+                <input type="text" id="contact" name="contact" required>
+                <label for="family">Family:</label>
+                <textarea id="family" name="family" required></textarea>
+                <label for="trusted1">Trusted Person 1:</label>
+                <input type="text" id="trusted1" name="trusted1" required>
+                <label for="trusted2">Trusted Person 2:</label>
+                <input type="text" id="trusted2" name="trusted2" required>
+                <label for="trusted3">Trusted Person 3:</label>
+                <input type="text" id="trusted3" name="trusted3" required>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
